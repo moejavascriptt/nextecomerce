@@ -1,8 +1,8 @@
 
 export default function Home() {
   return (
-    <main>
+    <div>
     E-Shop
-    </main>
+    </div>
   )
 }
