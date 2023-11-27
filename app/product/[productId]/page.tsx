@@ -14,6 +14,10 @@ const Product = ({params} : {params: IPrams }) => {
     return <div className="p-8">
     <Container>
     <ProductDetails product = {product} />
+    <div className="flex flex-col mt-20 gap-4">
+    Add Rating
+    </div>
+    <div>List</div>
     </Container>
     </div>
 }
