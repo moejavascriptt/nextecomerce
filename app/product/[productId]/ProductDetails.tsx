@@ -53,7 +53,7 @@ const [cartProduct, setCartProduct] = useState<CartProductType>({
 })
 const router = useRouter()
 
-console.log(cartProducts)
+console.log(cartProduct)
 
 useEffect(() => {
     setIsProductInCart(false)
@@ -130,7 +130,16 @@ const productRating = product.reviews.reduce((acc:number,
     </div>
     <div className={product.inStock ? 'text-teal-400' : 'text-rose-400'}>{product.inStock ? "In stock" : "Out of stock"}</div>
     <Horizontal />
-    {isProductInCart ? <></> : 
+    {isProductInCart ? <>
+    <p>
+    <span>Product added to cart</span>
+    </p>
+    <div>
+    <Button label="View Cart" outline onClick={() => {
+        router.push('/cart')
+    }} />
+    </div>
+    </> : 
     <>
     <SetColor
     cartProduct={cartProduct}
