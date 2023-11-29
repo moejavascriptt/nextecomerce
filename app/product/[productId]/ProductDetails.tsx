@@ -65,7 +65,7 @@ useEffect(() => {
             setIsProductInCart(true)
         }
     }
-}, [])
+}, [cartProducts])
 
 
 const productRating = product.reviews.reduce((acc:number,
@@ -131,10 +131,11 @@ const productRating = product.reviews.reduce((acc:number,
     <div className={product.inStock ? 'text-teal-400' : 'text-rose-400'}>{product.inStock ? "In stock" : "Out of stock"}</div>
     <Horizontal />
     {isProductInCart ? <>
-    <p>
+    <p className="mb-2 text-slate-500 flex items-center gap-1">
+    <MdCheckCircle className="text-teal-400" size={20} />
     <span>Product added to cart</span>
     </p>
-    <div>
+    <div className="max-w-[300px]">
     <Button label="View Cart" outline onClick={() => {
         router.push('/cart')
     }} />
