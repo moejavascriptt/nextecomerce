@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast"
 
 type CartContextType = {
     cartTotalQty: number
+    cartTotalAmount: number
     cartProducts: CartProductType[] | null; 
     handleAddProductToCart: (product: CartProductType) => void
     handleRemoveProductFromCart: (product: CartProductType) => void
@@ -150,7 +151,8 @@ const handleAddProductToCart = useCallback((product: CartProductType) =>{
         handleRemoveProductFromCart,
         handleCartQtyIncrease,
         handleCartQtyDecrease,
-        handleClearCart
+        handleClearCart,
+        cartTotalAmount
     }
 
     return <CartContext.Provider value={value} {...props} />
