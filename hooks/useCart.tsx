@@ -149,8 +149,10 @@ const handleAddProductToCart = useCallback((product: CartProductType) =>{
 
     const handleSetPaymentIntent = useCallback((val: string | null) => {
         setPaymentIntent(val)
-        localStorage.setItem('eShopPaymentIntent', JSON.stringify(val))
-    }, [paymentIntent])
+        localStorage.setItem('eShopPaymentIntent', JSON.stringify(val));
+    },
+    [paymentIntent]
+    )
 
     const value = {
         cartTotalQty,
@@ -162,7 +164,7 @@ const handleAddProductToCart = useCallback((product: CartProductType) =>{
         handleClearCart,
         cartTotalAmount,
         paymentIntent,
-        handleSetPaymentIntent
+        handleSetPaymentIntent,
     }
 
     return <CartContext.Provider value={value} {...props} />
